@@ -1,40 +1,21 @@
-var deleteAll = document.getElementById('delete-all');
-var submitPsl = document.getElementById('submit-psl');
+// // checking if the user is logged in or not
+// auth.onAuthStateChanged(user => {
+//   if(user) {
+//     console.log('user is signed in at staff.php');
+//   }
+//   else {
+//     alert('Your login session has expired or you have logged out, login again to continue');
+//     location.href = "http://localhost/php-programs/index.php";
+//   }
+// })
 
-submitPsl.addEventListener('click', function submitPsl() {
-    var inputValue = CKEDITOR.instances.editor2.getData();
-    console.log(inputValue);
-    
-    var li = document.createElement("li");
-    // var t = document.createTextNode(inputValue);
-    li.innerHTML = inputValue;
-    console.log(li)
-    if (inputValue === '') {
-      alert("You must write something!");
-    } else {
-     var ul = document.getElementById("myUL2")
-    ul.appendChild(li);
-    }
-    var span = document.createElement("span");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
-    
-    var close = document.getElementsByClassName("close");
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        var divs = this.parentElement;
-        ul.removeChild(divs);
-      }
-    }
-});
-
-deleteAll.addEventListener('click', function deleteAll() {
-    var lis = document.querySelectorAll('#myUL2 li');
-    for(var i=0; li=lis[i]; i++) {
-      li.parentNode.removeChild(li);
-  }
-});
+// var user0 = auth.currentUser
+// var userId = user0.uid;
+// // retreiving username
+// auth.onAuthStateChanged(user => {
+//   if(user) {
+//     get(child('users/' + user0.uid),)
+//   }
+// }) 
 
 CKEDITOR.replace( 'editor2' );

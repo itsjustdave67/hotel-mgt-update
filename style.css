@@ -13,7 +13,7 @@ html {
     background-size: cover;
 }
 body {
-/* background-image: url(./assets/bg.jpg); */
+background-image: url(./assets/bg.jpg);
 background-size: 100% 100%;
 background-repeat: no-repeat;
 font-family: sans-serif;
@@ -70,7 +70,9 @@ input[type="text"]::placeholder,
 input[type="password"]::placeholder {
   color: black;
 }
-input[type="submit"] {
+.staffbtn, .adminbtn, .supvbtn, .logout-btn {
+  width: 100%;
+  margin-bottom: 15px;
   border: none;
   outline: none;
   height: 40px;
@@ -81,7 +83,16 @@ input[type="submit"] {
   cursor: pointer;
   display: block;
 }
-.box input[type="submit"]:hover,.admin-button:hover,.super-button:hover {
+.logout-btn {
+  width: auto;
+}
+.admin-button:hover,
+.super-button:hover,
+.staffbtn:hover,
+.adminbtn:hover,
+.supvbtn:hover,
+.logout-btn:hover
+ {
   color: #000;
   background: #f08a17;
 }
@@ -208,6 +219,12 @@ main {
     margin-left: .4rem;
   }
 }
+.logout {
+  position: absolute;
+  display: inline-block;
+  right: 1rem;
+  top: 20px;
+}
 .editor {
   margin-bottom: 2rem;
 }
@@ -222,6 +239,7 @@ main {
   border-radius: 7px;
   box-shadow:  2px 2px 10px 2px rgb(255, 255, 255);
   padding: 10px;
+
 }
 .display::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
@@ -229,6 +247,67 @@ main {
 .display h3 {
   text-align: center;
   line-height: 1.5rem;
+}
+table {
+  width: 100%;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+tr {
+  border-bottom: 1px solid black;
+}
+th {
+  text-align: center;
+  font-size: normal;
+  color: black;
+}
+th, td {
+  border: none;
+  padding: 2px;
+}
+tr:hover {
+  background: rgb(236, 115, 23);
+}
+.No {
+  width: 15px;
+}
+.del {
+  width: 35px;
+}
+.delete-btn, i {
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+}
+.parent-row {
+  position: relative;
+  border-bottom: solid 1px black;
+}
+.admin-task, .sup-task, .stf-task, .psl-task {
+  text-align: left;
+}
+.delete {
+  text-align: right;
+}
+.delete a{
+  color: white;
+  background: lightseagreen;
+  padding: 1px 6px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+form p {
+  color: white;
+  background: lightseagreen;
+  border-radius: 7px;
+  padding: .6px;
+  text-align: center;
 }
 ol.f {
   list-style-type: decimal;
